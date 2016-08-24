@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">资产管理</string>
+    <string name="set_idel_time">读写器空闲时间</string>
+</resources>

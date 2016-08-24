@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/re_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/re_title2"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:background="@color/green" >
+
+            <TextView
+                android:id="@+id/tv_diaTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="10dip"
+                android:text="版本更新"
+                android:textColor="@color/white"
+                android:textSize="18dip" />
+        </RelativeLayout>
+
+       
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/re_body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dip"
+         android:layout_marginBottom="4dip"
+         android:paddingTop="8dp"
+         android:paddingBottom="8dp"
+        android:layout_marginRight="14dip" >
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dip"
+            android:layout_marginTop="12dip"
+            android:text="新增购物频道，不用花钱也可以买到好东西。而且还送早餐 。"
+            android:textColor="@color/text_color"
+            android:textSize="16dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/re_foot"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentTop="true"
+            android:background="#eeeeee" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消"
+                android:textColor="@color/black"
+                android:textSize="16dip" />
+
+            <RelativeLayout
+                android:layout_width="1dip"
+                android:layout_height="match_parent"
+                android:background="#eeeeee" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="更新"
+                android:textColor="@color/black"
+                android:textSize="16dip" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

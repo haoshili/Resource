@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".activity.MainActivity">
+
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></include>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="testOkHttp"
+        android:text="测试1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="creatJsonData"
+        android:text="生成json数据"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="testReasult"
+        android:text="测试网络请求结果"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="testJob"
+        android:text="测试实体类"/>
+
+</LinearLayout>
+

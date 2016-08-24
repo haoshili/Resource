@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/head"
+            layout="@layout/head"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></include>
+
+
+        <RelativeLayout
+            android:id="@+id/re_name"
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:layout_marginTop="@dimen/tv_margin_top">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/text_big_16"
+                android:text="资产信息："
+                android:textSize="@dimen/text_big_16" />
+
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/check_detail_margin_left"
+                android:text="远望谷自动盘库机器人"
+                android:textSize="@dimen/text_big" />
+
+            <RelativeLayout
+                android:id="@+id/re_for_detail"
+                android:layout_width="60dip"
+                android:layout_height="60dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/tv_margin_top">
+
+                <ImageView
+                    android:layout_width="35dip"
+                    android:layout_height="35dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft_big"
+                android:text="资产总数："
+                android:textSize="@dimen/text_big_16" />
+
+            <TextView
+                android:id="@+id/tv_resouce_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/check_detail_margin_left"
+                android:text="32323"
+                android:textSize="@dimen/text_big_16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft_big"
+                android:text="待盘数目："
+                android:textSize="@dimen/text_big_16" />
+
+
+            <TextView
+                android:id="@+id/tv_need_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/check_detail_margin_left"
+                android:text="123"
+                android:textSize="@dimen/text_big_16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft_big"
+                android:text="已盘数目："
+                android:textSize="@dimen/text_big_16" />
+
+
+            <TextView
+                android:id="@+id/tv_has_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/check_detail_margin_left"
+                android:text="23423423"
+                android:textSize="@dimen/text_big" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft_big"
+                android:text="当前TID："
+                android:textSize="@dimen/text_big_16" />
+
+
+            <TextView
+                android:id="@+id/tv_cur_tid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/check_detail_margin_left"
+                android:text=""
+                android:textSize="@dimen/text_big_16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="45dip"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"
+                android:onClick="readTag"
+                android:text="扫描" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activity.MainActivity">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </include>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="48dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="0dip"
+                android:paddingRight="0dip">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dip"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="14dip"
+                    android:text="读写器"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/re_set_power"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="天线功率"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <!--空闲时间设置-->
+                <RelativeLayout
+                    android:id="@+id/re_idel_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/marginleft14"
+                        android:text="@string/set_idel_time"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <!-- 开启数据自动备份 -->
+                <RelativeLayout
+                    android:id="@+id/re_out_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="读取延时时间"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/re_backup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="数据备份"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_save_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dip"
+                        android:text="9/13 8:00"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"
+                android:layout_alignParentBottom="true"
+                android:background="#e4e7e6"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="0dip"
+                android:paddingRight="0dip">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dip"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="14dip"
+                    android:text="通用"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp"/>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="账号设置"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="开启声音"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="开启震动"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/re_set_home"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="首页功能显示"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"
+                android:layout_alignParentBottom="true"
+                android:background="#e4e7e6"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="0dip"
+                android:paddingRight="0dip">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dip"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="14dip"
+                    android:text="关于"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/re_check_update"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="问题反馈"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/re_vate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="使用说明"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/re_about_us"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="14dip"
+                        android:text="关于应用"
+                        android:textColor="@color/text_color"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="14dip"
+                        android:layout_marginRight="14dip"
+                        android:background="#eeeeee"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"
+                android:layout_alignParentBottom="true"
+                android:background="#e4e7e6"/>
+
+            <RelativeLayout
+                android:id="@+id/re_check_updateu"
+                android:layout_width="fill_parent"
+                android:layout_height="48dip"
+
+                android:clickable="true"
+                android:onClick="logOut"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:paddingLeft="14dip"
+                    android:text="退出我的账号"
+                    android:textColor="@color/orange"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+
+            <!-- 把下边的空间给弄大了 -->
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="0"
+                android:background="#e4e7e6"
+                android:minHeight="60dip"/>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="0"
+                android:background="#e4e7e6"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+

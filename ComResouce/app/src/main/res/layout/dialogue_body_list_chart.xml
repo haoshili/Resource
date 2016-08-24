@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="420dip"
+    android:minHeight="420dip" >
+
+    <ListView
+        android:id="@+id/lv_dia"
+        android:layout_width="fill_parent"
+        android:layout_height="420dip"
+        android:divider="@color/line_gray"
+        android:dividerHeight="1px"
+        android:layout_centerVertical="true" >
+    </ListView>
+
+</RelativeLayout>

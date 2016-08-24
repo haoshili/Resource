@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activity.MainActivity">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></include>
+
+
+    <RelativeLayout
+        android:id="@+id/re_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="53dip">
+
+        <TextView
+            android:id="@+id/tv_resource_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/marginLeft_big"
+            android:text="资产信息："
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/marginLeft_big"
+            android:textColor="@color/text_color"
+            android:layout_toRightOf="@+id/tv_resource_name"
+            android:text="远望谷自动盘库机器人"
+            android:textSize="@dimen/text_big"/>
+
+        <RelativeLayout
+            android:id="@+id/re_for_detail"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/tv_margin_top">
+
+            <ImageView
+                android:layout_width="35dip"
+                android:layout_height="35dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_resource_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/re_name"
+        android:layout_marginLeft="@dimen/marginLeft_big"
+        android:layout_marginTop="@dimen/storage_detail_top"
+        android:text="当前TID："
+        android:textSize="@dimen/text_big_16"/>
+
+
+    <TextView
+        android:id="@+id/tv_resource_count_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/re_name"
+        android:layout_marginLeft="@dimen/marginLeft_big"
+        android:layout_marginTop="@dimen/storage_detail_top"
+        android:layout_toRightOf="@id/tv_resource_count"
+
+        android:text="0094fff12334234232334"
+        android:textSize="@dimen/text_big_16"/>
+
+
+    <TextView
+        android:id="@+id/tv_resource_count_real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_resource_count"
+        android:layout_marginLeft="@dimen/marginLeft_big"
+        android:layout_marginTop="@dimen/storage_detail_top"
+        android:text="扫描数目："
+        android:textSize="@dimen/text_big_16"/>
+
+
+    <TextView
+        android:id="@+id/tv_resource_count_detail_real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_resource_count"
+        android:layout_marginLeft="@dimen/marginLeft_big"
+        android:layout_marginTop="@dimen/storage_detail_top"
+        android:layout_toRightOf="@id/tv_resource_count"
+        android:text="444"
+        android:textSize="@dimen/text_big_22"/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="scanTag"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="扫描"/>
+
+</RelativeLayout>
+

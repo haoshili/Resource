@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minHeight="45dp"
+    android:orientation="vertical"
+    android:paddingBottom="14dp"
+    android:paddingTop="12dp" >
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="您将会删除该类别下面的所有笔记，以及该笔记的所有复习计划。您确认要删除该类别吗？
+输入  删除  确定
+        "
+        android:textSize="16dp"
+        android:textColor="@color/text_color"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_dia"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:layout_width="1000dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="#0d91a0" >
+    </RelativeLayout>
+
+</LinearLayout>

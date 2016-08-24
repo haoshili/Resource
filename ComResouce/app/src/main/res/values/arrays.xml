@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<resources>
+
+
+    <!--天线功率-->
+    <string-array name="power">
+        <item>14dBm</item>
+        <item>16dBm</item>
+        <item>18dBm</item>
+        <item>20dBm</item>
+        <item>22dBm</item>
+        <item>24dBm</item>
+        <item>26dBm</item>
+        <item>28dBm(推荐)</item>
+        <item>30dBm</item>
+    </string-array>
+
+    <!--读写器空闲时间-->
+    <string-array name="ideltime">
+        <item>1min</item>
+        <item>2min</item>
+        <item>3min</item>
+        <item>4min</item>
+        <item>5min</item>
+    </string-array>
+
+    <!--读写器延时时间-->
+    <string-array name="outtime">
+        <item>1s</item>
+        <item>2s</item>
+        <item>3s</item>
+        <item>4s</item>
+        <item>5s</item>
+    </string-array>
+</resources>

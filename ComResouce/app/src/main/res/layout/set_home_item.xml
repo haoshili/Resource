@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+
+                android:layout_height="55dip">
+
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/marginleft14"
+        android:src="@drawable/ic_home_test"/>
+
+    <TextView
+        android:id="@+id/tv_descript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="25dp"
+        android:text="设置"
+        android:layout_toRightOf="@id/iv_home"
+        android:textSize="18sp"/>
+
+
+    <Switch
+        android:textOn="显示"
+       android:textOff="隐藏"
+        android:trackTint="@color/text_g"
+        android:layout_marginRight="14dip"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/switch1"
+      />
+
+
+</RelativeLayout>
