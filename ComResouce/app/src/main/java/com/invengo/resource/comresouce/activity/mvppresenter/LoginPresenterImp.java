@@ -9,12 +9,12 @@ import com.invengo.resource.comresouce.activity.mvpinterface.view.MainViewInter;
  * Date: 2016-05-19
  * Time: 13:40
  */
-public class MainPresenterImp implements MainPresenter, MainPresenter.VailDataInterface, MainPresenter.InFirstDataInterface {
+public class LoginPresenterImp implements MainPresenter, MainPresenter.VailDataInterface, MainPresenter.InFirstDataInterface {
 
     private MainViewInter viewInterMain;
     private MainVailDataActor vailDataActor;
 
-    public MainPresenterImp(MainViewInter viewInterMain) {
+    public LoginPresenterImp(MainViewInter viewInterMain) {
         this.viewInterMain = viewInterMain;
         this.vailDataActor = new VailDataActorImp(this);
     }

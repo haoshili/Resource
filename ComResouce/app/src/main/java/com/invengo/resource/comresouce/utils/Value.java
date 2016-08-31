@@ -19,5 +19,7 @@ public class Value {
      * URL
      */
     public static String U_DOMAIN = "http://192.170.0.29:67/";
+    public static String U_LOGIN = "http://192.170.0.29:67/";
+
 }
 

@@ -8,11 +8,11 @@ import com.invengo.resource.comresouce.R;
 import com.invengo.resource.comresouce.activity.base.BaseTwoActivity;
 import com.invengo.resource.comresouce.activity.mvpinterface.MainPresenter;
 import com.invengo.resource.comresouce.activity.mvpinterface.view.MainViewInter;
-import com.invengo.resource.comresouce.activity.mvppresenter.MainPresenterImp;
+import com.invengo.resource.comresouce.activity.mvppresenter.LoginPresenterImp;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseTwoActivity implements MainViewInter {
+public class LoginActivity extends BaseTwoActivity implements MainViewInter {
 
     private MainPresenter presenter;
 
@@ -22,7 +22,7 @@ public class MainActivity extends BaseTwoActivity implements MainViewInter {
         setContentView(R.layout.activity_main);
         inItHead(-1, "登录", -1);
         ButterKnife.bind(this);
-        presenter = new MainPresenterImp(this);
+        presenter = new LoginPresenterImp(this);
 
 //        presenter
     }

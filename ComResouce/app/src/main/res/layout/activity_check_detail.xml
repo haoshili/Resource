@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.LoginActivity">
 
 
     <LinearLayout
@@ -162,6 +162,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="45dip"
                 android:layout_alignParentBottom="true"
+                android:background="@drawable/model_bg"
+                android:textColor="@color/white"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="50dp"
                 android:layout_marginLeft="40dp"

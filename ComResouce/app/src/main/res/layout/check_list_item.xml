@@ -7,7 +7,7 @@
                 android:paddingBottom="12dip"
                 android:paddingLeft="@dimen/paddingLeft"
                 android:paddingTop="8dip"
-                tools:context=".activity.MainActivity">
+                tools:context=".activity.LoginActivity">
 
 
     <TextView
