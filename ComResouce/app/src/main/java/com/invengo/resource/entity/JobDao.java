@@ -25,9 +25,10 @@ public class JobDao extends AbstractDao<Job, String> {
     public static class Properties {
         public final static Property Id = new Property(0, String.class, "id", true, "ID");
         public final static Property Job_name = new Property(1, String.class, "job_name", false, "JOB_NAME");
-        public final static Property Text = new Property(2, Boolean.class, "text", false, "TEXT");
-        public final static Property Job_ctime = new Property(3, Long.class, "job_ctime", false, "JOB_CTIME");
-        public final static Property Job_complete = new Property(4, Boolean.class, "job_complete", false, "JOB_COMPLETE");
+        public final static Property Job_url = new Property(2, String.class, "job_url", false, "JOB_URL");
+        public final static Property Text = new Property(3, Boolean.class, "text", false, "TEXT");
+        public final static Property Job_ctime = new Property(4, Long.class, "job_ctime", false, "JOB_CTIME");
+        public final static Property Job_complete = new Property(5, Boolean.class, "job_complete", false, "JOB_COMPLETE");
     };
 
     private DaoSession daoSession;
@@ -48,9 +49,10 @@ public class JobDao extends AbstractDao<Job, String> {
         db.execSQL("CREATE TABLE " + constraint + "'JOB' (" + //
                 "'ID' TEXT PRIMARY KEY NOT NULL ," + // 0: id
                 "'JOB_NAME' TEXT," + // 1: job_name
-                "'TEXT' INTEGER," + // 2: text
-                "'JOB_CTIME' INTEGER," + // 3: job_ctime
-                "'JOB_COMPLETE' INTEGER);"); // 4: job_complete
+                "'JOB_URL' TEXT," + // 2: job_url
+                "'TEXT' INTEGER," + // 3: text
+                "'JOB_CTIME' INTEGER," + // 4: job_ctime
+                "'JOB_COMPLETE' INTEGER);"); // 5: job_complete
     }
 
     /** Drops the underlying database table. */
@@ -74,19 +76,24 @@ public class JobDao extends AbstractDao<Job, String> {
             stmt.bindString(2, job_name);
         }
  
+        String job_url = entity.getJob_url();
+        if (job_url != null) {
+            stmt.bindString(3, job_url);
+        }
+ 
         Boolean text = entity.getText();
         if (text != null) {
-            stmt.bindLong(3, text ? 1l: 0l);
+            stmt.bindLong(4, text ? 1l: 0l);
         }
  
         Long job_ctime = entity.getJob_ctime();
         if (job_ctime != null) {
-            stmt.bindLong(4, job_ctime);
+            stmt.bindLong(5, job_ctime);
         }
  
         Boolean job_complete = entity.getJob_complete();
         if (job_complete != null) {
-            stmt.bindLong(5, job_complete ? 1l: 0l);
+            stmt.bindLong(6, job_complete ? 1l: 0l);
         }
     }
 
@@ -108,9 +115,10 @@ public class JobDao extends AbstractDao<Job, String> {
         Job entity = new Job( //
             cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // job_name
-            cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0, // text
-            cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3), // job_ctime
-            cursor.isNull(offset + 4) ? null : cursor.getShort(offset + 4) != 0 // job_complete
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // job_url
+            cursor.isNull(offset + 3) ? null : cursor.getShort(offset + 3) != 0, // text
+            cursor.isNull(offset + 4) ? null : cursor.getLong(offset + 4), // job_ctime
+            cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0 // job_complete
         );
         return entity;
     }
@@ -120,9 +128,10 @@ public class JobDao extends AbstractDao<Job, String> {
     public void readEntity(Cursor cursor, Job entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0));
         entity.setJob_name(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setText(cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0);
-        entity.setJob_ctime(cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3));
-        entity.setJob_complete(cursor.isNull(offset + 4) ? null : cursor.getShort(offset + 4) != 0);
+        entity.setJob_url(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setText(cursor.isNull(offset + 3) ? null : cursor.getShort(offset + 3) != 0);
+        entity.setJob_ctime(cursor.isNull(offset + 4) ? null : cursor.getLong(offset + 4));
+        entity.setJob_complete(cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0);
      }
     
     /** @inheritdoc */

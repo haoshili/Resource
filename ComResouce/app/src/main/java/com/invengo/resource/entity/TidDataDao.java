@@ -30,8 +30,9 @@ public class TidDataDao extends AbstractDao<TidData, String> {
     public static class Properties {
         public final static Property Id = new Property(0, String.class, "id", true, "ID");
         public final static Property Tid_tid = new Property(1, String.class, "tid_tid", false, "TID_TID");
-        public final static Property Tid_has_read = new Property(2, Boolean.class, "tid_has_read", false, "TID_HAS_READ");
-        public final static Property Product_id = new Property(3, String.class, "product_id", false, "PRODUCT_ID");
+        public final static Property Tid_product_name = new Property(2, String.class, "tid_product_name", false, "TID_PRODUCT_NAME");
+        public final static Property Tid_has_read = new Property(3, Boolean.class, "tid_has_read", false, "TID_HAS_READ");
+        public final static Property Product_id = new Property(4, String.class, "product_id", false, "PRODUCT_ID");
     };
 
     private DaoSession daoSession;
@@ -53,8 +54,9 @@ public class TidDataDao extends AbstractDao<TidData, String> {
         db.execSQL("CREATE TABLE " + constraint + "'TID_DATA' (" + //
                 "'ID' TEXT PRIMARY KEY NOT NULL ," + // 0: id
                 "'TID_TID' TEXT," + // 1: tid_tid
-                "'TID_HAS_READ' INTEGER," + // 2: tid_has_read
-                "'PRODUCT_ID' TEXT);"); // 3: product_id
+                "'TID_PRODUCT_NAME' TEXT," + // 2: tid_product_name
+                "'TID_HAS_READ' INTEGER," + // 3: tid_has_read
+                "'PRODUCT_ID' TEXT);"); // 4: product_id
     }
 
     /** Drops the underlying database table. */
@@ -78,14 +80,19 @@ public class TidDataDao extends AbstractDao<TidData, String> {
             stmt.bindString(2, tid_tid);
         }
  
+        String tid_product_name = entity.getTid_product_name();
+        if (tid_product_name != null) {
+            stmt.bindString(3, tid_product_name);
+        }
+ 
         Boolean tid_has_read = entity.getTid_has_read();
         if (tid_has_read != null) {
-            stmt.bindLong(3, tid_has_read ? 1l: 0l);
+            stmt.bindLong(4, tid_has_read ? 1l: 0l);
         }
  
         String product_id = entity.getProduct_id();
         if (product_id != null) {
-            stmt.bindString(4, product_id);
+            stmt.bindString(5, product_id);
         }
     }
 
@@ -107,8 +114,9 @@ public class TidDataDao extends AbstractDao<TidData, String> {
         TidData entity = new TidData( //
             cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // tid_tid
-            cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0, // tid_has_read
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3) // product_id
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // tid_product_name
+            cursor.isNull(offset + 3) ? null : cursor.getShort(offset + 3) != 0, // tid_has_read
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // product_id
         );
         return entity;
     }
@@ -118,8 +126,9 @@ public class TidDataDao extends AbstractDao<TidData, String> {
     public void readEntity(Cursor cursor, TidData entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0));
         entity.setTid_tid(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setTid_has_read(cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0);
-        entity.setProduct_id(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setTid_product_name(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setTid_has_read(cursor.isNull(offset + 3) ? null : cursor.getShort(offset + 3) != 0);
+        entity.setProduct_id(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
      }
     
     /** @inheritdoc */

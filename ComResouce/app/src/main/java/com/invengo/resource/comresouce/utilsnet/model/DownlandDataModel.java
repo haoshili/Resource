@@ -15,6 +15,16 @@ public class DownlandDataModel extends BaseModel {
 
     private String tidDatas;
 
+    private String downLandUrl;
+
+    public String getDownLandUrl() {
+        return downLandUrl;
+    }
+
+    public void setDownLandUrl(String downLandUrl) {
+        this.downLandUrl = downLandUrl;
+    }
+
     public String getJob() {
         return job;
     }

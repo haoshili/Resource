@@ -27,7 +27,7 @@ public class VailDataActorImp implements MainVailDataActor {
     @Override
     public void valiData(String userName, String pwd) {
 
-        OkHttpUtils.getAsyn(Value.U_DOMAIN, BaseModel.class, new RequestListenser<BaseModel>() {
+        OkHttpUtils.getAsyn(Value.U_LOGIN+"login.html", BaseModel.class, new RequestListenser<BaseModel>() {
             @Override
             public void onLoadError() {
                 vailDataInterface.onLoginErr("请求失败");
@@ -38,7 +38,7 @@ public class VailDataActorImp implements MainVailDataActor {
 
                 if (object.getStatue() == 0) {
 
-                    LogUtils.i("test",object.getStatue()+"_ceshi");
+                    LogUtils.i("test",object.getStatue()+"用户登陆成功");
                     vailDataInterface.onSuccess();
                 } else {
                     vailDataInterface.onLoginErr(object.getErrorMessage());
@@ -46,7 +46,5 @@ public class VailDataActorImp implements MainVailDataActor {
 
             }
         });
-
-        vailDataInterface.onSuccess();
     }
 }

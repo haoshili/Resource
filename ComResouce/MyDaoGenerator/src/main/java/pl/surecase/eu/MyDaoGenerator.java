@@ -38,6 +38,7 @@ public class MyDaoGenerator {
 
         job.addStringProperty("id").primaryKey();
         job.addStringProperty("job_name");
+        job.addStringProperty("job_url");
         job.addBooleanProperty("text");
         job.addLongProperty("job_ctime");
         job.addBooleanProperty("job_complete");
@@ -81,6 +82,7 @@ public class MyDaoGenerator {
         Entity tidData = schema.addEntity("TidData");
         tidData.addStringProperty("id").primaryKey();
         tidData.addStringProperty("tid_tid");
+        tidData.addStringProperty("tid_product_name");
         tidData.addBooleanProperty("tid_has_read");
 
         Property productId = tidData.addStringProperty("product_id").getProperty();

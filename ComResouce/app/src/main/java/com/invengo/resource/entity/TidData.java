@@ -11,6 +11,7 @@ public class TidData {
 
     private String id;
     private String tid_tid;
+    private String tid_product_name;
     private Boolean tid_has_read;
     private String product_id;
 
@@ -31,9 +32,10 @@ public class TidData {
         this.id = id;
     }
 
-    public TidData(String id, String tid_tid, Boolean tid_has_read, String product_id) {
+    public TidData(String id, String tid_tid, String tid_product_name, Boolean tid_has_read, String product_id) {
         this.id = id;
         this.tid_tid = tid_tid;
+        this.tid_product_name = tid_product_name;
         this.tid_has_read = tid_has_read;
         this.product_id = product_id;
     }
@@ -58,6 +60,14 @@ public class TidData {
 
     public void setTid_tid(String tid_tid) {
         this.tid_tid = tid_tid;
+    }
+
+    public String getTid_product_name() {
+        return tid_product_name;
+    }
+
+    public void setTid_product_name(String tid_product_name) {
+        this.tid_product_name = tid_product_name;
     }
 
     public Boolean getTid_has_read() {

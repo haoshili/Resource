@@ -71,11 +71,19 @@ public class NoDownlandFragment extends BaseFragment implements DownlandRecycler
 
     }
 
+    /**
+     * 点击条目，进行数据下载
+     *
+     * @param position
+     * @param viewHolder
+     */
     @Override
     public void ontImageViewClick(int position, DownlandRecyclerAdapter.ViewHolder viewHolder) {
         viewHolder.progressBar.setVisibility(View.VISIBLE);
         viewHolder.iv_checked.setVisibility(View.INVISIBLE);
-        noDownlandPresenter.downlandData("", position);
+
+        LogUtils.i("test",listJob.get(position).getJob_url());
+        noDownlandPresenter.downlandData(listJob.get(position).getJob_url(), position);
     }
 
     @Override
@@ -118,7 +126,7 @@ public class NoDownlandFragment extends BaseFragment implements DownlandRecycler
         LogUtils.i(Value.L_NOLANDDATA, "position" + position);
         listJob.remove(position);
 
-        if(listJob.size() == 0){
+        if (listJob.size() == 0) {
             tv_remind.setText("没有需要下载的数据了！");
             tv_remind.setVisibility(View.VISIBLE);
         }

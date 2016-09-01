@@ -50,17 +50,21 @@ public class CreatJsonData {
 
         Job job1 = new Job();
         job1.setJob_name("软件部盘点正在使用的电脑");
+        job1.setJob_url("tttt");
         listJob.add(job1);
 
-//        Job job2 = new Job();
-//        job2.setJob_name("软件部盘点正在使用的电脑");
-//        listJob.add(job2);
+        Job job2 = new Job();
+        job2.setJob_name("软件部盘点正在使用的电脑");
+        job2.setJob_url("22222");
+        listJob.add(job2);
 //
-//        Job job3 = new Job();
-//        job3.setJob_name("软件部盘点正在使用的电脑");
-//        listJob.add(job3);
+        Job job3 = new Job();
+        job3.setJob_name("软件部盘点正在使用的电脑");
+        job3.setJob_url("333");
+        listJob.add(job3);
 
         String utils = GsonUtil.objectToJson(listJob);
+
         LogUtils.i("test", utils);
         return utils;
 
@@ -82,11 +86,13 @@ public class CreatJsonData {
         TidData tidData = new TidData();
         tidData.setTid_has_read(false);
         tidData.setTid_tid("TTTTTT");
+        tidData.setTid_product_name("name1");
         LogUtils.i("test", GsonUtil.objectToJson(tidData));
 
         TidData tidData1 = new TidData();
         tidData1.setTid_has_read(false);
         tidData1.setTid_tid("dsfadfa");
+        tidData1.setTid_product_name("name2");
         LogUtils.i("test", GsonUtil.objectToJson(tidData1));
 
         List<TidData> listTidData = new ArrayList<>();

@@ -41,7 +41,7 @@ public class NoDownlandImp extends BaseDao implements NoDownlandPresenter {
     @Override
     public void getNoDowanlandShowData() {
 
-        OkHttpUtils.getAsyn(Value.U_DOMAIN, BaseModel.class, new RequestListenser<BaseModel>() {
+        OkHttpUtils.getAsyn(Value.U_DOMAIN + "index.html", BaseModel.class, new RequestListenser<BaseModel>() {
             @Override
             public void onLoadError() {
                 viewInter.onLoandHomeDataError();
@@ -51,6 +51,7 @@ public class NoDownlandImp extends BaseDao implements NoDownlandPresenter {
             public void onLoadSuccess(BaseModel object) {
 
                 if (object.getStatue() == 0) {
+                    LogUtils.i("test", object.getStatue() + "test+statue");
                     viewInter.onLoadHomeDataSuccess(getListJob(object.getData()));
                 } else {
                     viewInter.onLoandHomeDataError();
@@ -95,21 +96,24 @@ public class NoDownlandImp extends BaseDao implements NoDownlandPresenter {
      * 保存下载的数据到数据库
      */
     private void saveDownData(DownlandDataModel model) {
-        Job job = (Job) GsonUtil.jsonToBean(model.getJob(),Job.class);
+        Job job = (Job) GsonUtil.jsonToBean(model.getJob(), Job.class);
         job.setId(UUIDUtils.getUUId());
+        job.setJob_url("test");
         job.setJob_ctime(System.currentTimeMillis());
         job.setJob_complete(false);
+
         operationDao.getJobDao().insert(job);
 
-        Product product = (Product) GsonUtil.jsonToBean(model.getProduct(),Product.class);
+        Product product = (Product) GsonUtil.jsonToBean(model.getProduct(), Product.class);
         product.setId(UUIDUtils.getUUId());
         product.setProduct_storage(true);
         product.setJob(job);
         operationDao.getProductDao().insert(product);
 
-        Type type = new TypeToken<ArrayList<TidData>>(){}.getType();
-        List<TidData> tidDataList = (List<TidData>) GsonUtil.jsonToList(model.getTidDatas(),type);
-        for(TidData tidData:tidDataList){
+        Type type = new TypeToken<ArrayList<TidData>>() {
+        }.getType();
+        List<TidData> tidDataList = (List<TidData>) GsonUtil.jsonToList(model.getTidDatas(), type);
+        for (TidData tidData : tidDataList) {
             tidData.setId(UUIDUtils.getUUId());
             tidData.setProduct(product);
         }

@@ -12,6 +12,7 @@ public class Job {
 
     private String id;
     private String job_name;
+    private String job_url;
     private Boolean text;
     private Long job_ctime;
     private Boolean job_complete;
@@ -31,9 +32,10 @@ public class Job {
         this.id = id;
     }
 
-    public Job(String id, String job_name, Boolean text, Long job_ctime, Boolean job_complete) {
+    public Job(String id, String job_name, String job_url, Boolean text, Long job_ctime, Boolean job_complete) {
         this.id = id;
         this.job_name = job_name;
+        this.job_url = job_url;
         this.text = text;
         this.job_ctime = job_ctime;
         this.job_complete = job_complete;
@@ -59,6 +61,14 @@ public class Job {
 
     public void setJob_name(String job_name) {
         this.job_name = job_name;
+    }
+
+    public String getJob_url() {
+        return job_url;
+    }
+
+    public void setJob_url(String job_url) {
+        this.job_url = job_url;
     }
 
     public Boolean getText() {
