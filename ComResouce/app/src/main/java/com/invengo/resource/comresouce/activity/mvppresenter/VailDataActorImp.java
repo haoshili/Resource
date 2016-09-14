@@ -30,11 +30,17 @@ public class VailDataActorImp implements MainVailDataActor {
         OkHttpUtils.getAsyn(Value.U_LOGIN+"login.html", BaseModel.class, new RequestListenser<BaseModel>() {
             @Override
             public void onLoadError() {
-                vailDataInterface.onLoginErr("请求失败");
+
+                //先不用服务器的数据，直接登录成功
+                vailDataInterface.onSuccess();
+
+//                vailDataInterface.onLoginErr("请求失败");
             }
 
             @Override
             public void onLoadSuccess(BaseModel object) {
+
+                vailDataInterface.onSuccess();
 
                 if (object.getStatue() == 0) {
 

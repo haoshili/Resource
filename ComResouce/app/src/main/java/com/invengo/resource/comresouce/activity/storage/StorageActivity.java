@@ -48,7 +48,6 @@ public class StorageActivity extends BaseTwoActivity implements HomeRecyclerSwip
         ButterKnife.bind(this);
         inItHead("入库管理", R.drawable.ic_add_white_36dp);
         presenter = new StoragePresenterImp(this);
-
     }
 
     @Override
